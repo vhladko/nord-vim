@@ -739,9 +739,6 @@ if exists('g:vim_pandoc_syntax_exists')
 endif
   
 if has('nvim')
-  " tree-sitter
-  " > nvim-treesitter/nvim-treesitter
-  if exists('g:loaded_nvim_treesitter')
     hi! link TSAnnotation Annotation
     hi! link TSConstBuiltin Constant
     hi! link TSConstructor Function
@@ -755,7 +752,8 @@ if has('nvim')
     hi! link TSUnderline Underline
     hi! link TSVariable Variable
     hi! link TSVariableBuiltin Keyword
-  endif
+    call s:hi("TSTypeBuiltIn", s:nord7_gui, "", s:nord7_term, "", "", "")
+    call s:hi("TSType", s:nord7_gui, "", s:nord7_term, "", "", "")
 endif
 
 " TypeScript
